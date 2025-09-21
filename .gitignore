@@ -1,3 +1,17 @@
+# Virtual environment
+.venv/
+
+# Secrets
+.env
+service_account.json
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+
+# Streamlit cache
+.streamlit/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

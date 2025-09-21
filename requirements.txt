@@ -1,0 +1,8 @@
+flask
+requests
+streamlit
+firebase-admin
+google-cloud-aiplatform
+langgraph
+ollama
+python-dotenv
