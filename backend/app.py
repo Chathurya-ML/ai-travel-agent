@@ -7,6 +7,12 @@ from datetime import datetime
 app = Flask(__name__)
 graph = build_langgraph_workflow()
 
+
+@app.route("/")
+def home():
+    return "AI Travel Agent is live!"
+
+
 @app.route("/generate_itinerary", methods=["POST"])
 def generate_itinerary():
     data = request.json
