@@ -3,6 +3,8 @@ from firebase_admin import credentials, firestore
 import os
 from dotenv import load_dotenv
 
+load_dotenv()
+
 firebase_cred = {
     "type": os.getenv("FIREBASE_TYPE"),
     "project_id": os.getenv("FIREBASE_PROJECT_ID"),
