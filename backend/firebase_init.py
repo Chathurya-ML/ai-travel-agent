@@ -23,7 +23,7 @@ for key, value in firebase_cred.items():
     print(f"{key}: {value}")
 print("Private key preview:", firebase_cred["private_key"][:30] + '...' if firebase_cred["private_key"] else "None")
 # Initialize Firebase Admin with the constructed credentials
-cred = credentials.Certificate(firebase_cred)
+cred = credentials.Certificate()
 firebase_admin.initialize_app(cred)
 
 # Initialize Firestore
