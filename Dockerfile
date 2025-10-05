@@ -4,8 +4,12 @@ FROM python:3.12-slim
 # Set working directory
 WORKDIR /app
 
-# Copy everything
-COPY . /app
+# Copy backend and frontend folders
+COPY backend/ ./backend/
+COPY frontend/ ./frontend/
+
+# Copy requirements from backend
+COPY backend/requirements.txt ./requirements.txt
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
@@ -14,5 +18,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8080 8501
 
 # Start both Flask and Streamlit
-# '&' runs Flask in background, Streamlit in foreground
-CMD ["sh", "-c", "python run_backend.py & streamlit run frontend/streamlit_app.py --server.port 8501 --server.address 0.0.0.0"]
+CMD ["sh", "-c", "python backend/run_backend.py & streamlit run frontend/streamlit_app.py --server.port 8501 --server.address 0.0.0.0"]
