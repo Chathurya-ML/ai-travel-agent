@@ -29,7 +29,7 @@ if submitted:
 
     try:
 
-        response = requests.post("http://localhost:5000/generate_itinerary", json=payload)
+        response = requests.post("http://localhost:8080/generate_itinerary", json=payload)
         # result = response.json()
             
         if response.status_code == 200:

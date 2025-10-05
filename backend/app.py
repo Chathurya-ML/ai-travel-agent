@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from langgraph_workflow import build_langgraph_workflow
 from gemini_utils import generate_seed_itinerary, get_enriched_attractions
-from firebase_init import db
+# from firebase_init import db
 from datetime import datetime
 
 app = Flask(__name__)
@@ -49,14 +49,14 @@ def generate_itinerary():
     # })
 
     # Filter out empty fields before storing
-    doc = {
-        "timestamp": datetime.utcnow().isoformat()
-    }
-    for key, value in result.items():
-        if value not in ("", [], {}, None):
-            doc[key] = value
+    # doc = {
+    #     "timestamp": datetime.utcnow().isoformat()
+    # }
+    # for key, value in result.items():
+    #     if value not in ("", [], {}, None):
+    #         doc[key] = value
 
-    db.collection("trip_logs").add(doc)
+    # db.collection("trip_logs").add(doc)
 
 
     return jsonify(result)
